@@ -1,0 +1,6 @@
+{
+  "name": "Bookmark Dashboard",
+  "description": "A high-fidelity, minimalist dark-mode bookmarks manager with glassmorphic elements and secure private vault effects.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
