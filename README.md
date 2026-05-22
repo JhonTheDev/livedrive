@@ -45,17 +45,6 @@ O fluxo atual inclui:
 npm install
 ```
 
-## Arquivo de ambiente
-
-O projeto traz um exemplo em [.env.example](.env.example). Hoje ele expoe estas variaveis:
-
-- `GEMINI_API_KEY`
-- `APP_URL`
-
-Essas variaveis sao herdadas da configuracao do ambiente do AI Studio e nao sao obrigatorias para o fluxo principal de bookmarks local. Se voce estiver usando apenas o CRUD e a API local, o projeto roda sem depender delas.
-
-Se precisar, crie seu arquivo local de variaveis a partir do exemplo e ajuste os valores conforme seu ambiente.
-
 ## Como rodar
 
 ### Opcao recomendada: tudo em um comando
