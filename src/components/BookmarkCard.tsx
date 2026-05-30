@@ -80,7 +80,7 @@ export default function BookmarkCard({
           setIsHovered(false);
           setShowOptions(false);
         }}
-        className={`relative rounded-2xl overflow-hidden group min-h-[210px] flex flex-col justify-between p-6 transition-all duration-300 border bg-white/[0.03] shadow-[0_4px_24px_rgba(0,0,0,0.5)] ${
+        className={`relative rounded-2xl overflow-visible group min-h-[210px] flex flex-col justify-between p-6 transition-all duration-300 border bg-white/[0.03] shadow-[0_4px_24px_rgba(0,0,0,0.5)] ${
           isHovered ? 'border-white/20' : 'border-white/10'
         }`}
         style={{
@@ -103,14 +103,14 @@ export default function BookmarkCard({
 
             {/* Quick Actions Menu Trigger (Hidden in locked/private obscured mode) */}
             {!isObscured && (
-              <div className="relative">
+              <div className="relative z-30">
                 <button
                   id={`card-menu-btn-${bookmark.id}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setShowOptions(!showOptions);
                   }}
-                  className="opacity-0 group-hover:opacity-100 p-1 rounded-md hover:bg-white/10 text-white/40 hover:text-white transition-all duration-200"
+                  className="pointer-events-auto opacity-0 group-hover:opacity-100 p-1 rounded-md hover:bg-white/10 text-white/40 hover:text-white transition-all duration-200"
                   aria-label="Bookmark Options"
                 >
                   <MoreVertical className="w-4 h-4 stroke-[1.8]" />
@@ -119,7 +119,7 @@ export default function BookmarkCard({
                 {showOptions && (
                   <>
                     <div className="fixed inset-0 z-20" onClick={() => setShowOptions(false)} />
-                    <div className="absolute right-0 mt-1 w-28 bg-[#121212] border border-white/10 rounded-lg shadow-xl py-1 z-30 animate-in fade-in zoom-in-95 duration-150">
+                    <div className="absolute right-0 mt-1 w-28 bg-[#121212] border border-white/10 rounded-lg shadow-xl py-1 z-50 animate-in fade-in zoom-in-95 duration-150">
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
@@ -224,7 +224,7 @@ export default function BookmarkCard({
         setIsHovered(false);
         setShowOptions(false);
       }}
-      className={`relative rounded-xl overflow-hidden group flex items-center justify-between p-4 transition-all duration-300 border bg-white/[0.02] ${
+      className={`relative rounded-xl overflow-visible group flex items-center justify-between p-4 transition-all duration-300 border bg-white/[0.02] ${
         isHovered ? 'border-white/20' : 'border-white/10'
       }`}
       style={{
@@ -280,7 +280,7 @@ export default function BookmarkCard({
       </div>
 
       {/* Right control panel (Not obscured) */}
-      <div className="relative flex items-center gap-2 shrink-0 z-10 ml-4">
+      <div className="relative flex items-center gap-2 shrink-0 z-30 ml-4">
         {isObscured ? (
           <div className="flex items-center gap-2 bg-white/5 border border-white/5 py-1 px-3 rounded-lg text-[10px] font-mono text-white/30 uppercase">
             <Lock className="w-3 h-3 text-white/35" />
@@ -305,7 +305,7 @@ export default function BookmarkCard({
                 e.stopPropagation();
                 setShowOptions(!showOptions);
               }}
-              className="p-1.5 rounded-md hover:bg-white/10 text-white/40 hover:text-white transition-colors"
+              className="pointer-events-auto p-1.5 rounded-md hover:bg-white/10 text-white/40 hover:text-white transition-colors"
             >
               <MoreVertical className="w-4 h-4 stroke-[1.8]" />
             </button>
@@ -313,7 +313,7 @@ export default function BookmarkCard({
             {showOptions && (
               <>
                 <div className="fixed inset-0 z-20" onClick={() => setShowOptions(false)} />
-                <div className="absolute right-0 top-full mt-1 w-28 bg-[#121212] border border-white/10 rounded-lg shadow-xl py-1 z-30">
+                <div className="absolute right-0 top-full mt-1 w-28 bg-[#121212] border border-white/10 rounded-lg shadow-xl py-1 z-50">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
@@ -348,7 +348,7 @@ export default function BookmarkCard({
       {/* Private Vault Locked Hover Over layer for list */}
       {isObscured && (
         <div 
-          className="absolute inset-0 bg-black/60 backdrop-blur-xl flex items-center justify-center transition-all duration-300 z-1"
+          className="absolute inset-0 bg-black/60 backdrop-blur-xl flex items-center justify-center transition-all duration-300 z-10"
         >
           <div className="flex items-center gap-3">
             <Lock className="w-3.5 h-3.5 text-white/40" />
