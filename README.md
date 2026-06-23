@@ -1,4 +1,4 @@
-# Onelive
+# LiveDrive
 
 Onelive e uma aplicacao para salvar, organizar e consultar links que voce acessa com frequencia. O projeto foi pensado para uso local, com banco SQLite, front-end em React + TypeScript e back-end em Node.js + Express.
 
